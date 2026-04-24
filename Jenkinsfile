@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     options {
-        diableConcurrentBuilds() // interdit le fait de lancer ce job 2 fois en meme temps
+        disableConcurrentBuilds() // interdit le fait de lancer ce job 2 fois en meme temps
         parallelsAlwaysFailFast() // dans un parallel, si l'un des threads échoue, stoppe les autres
     }
 

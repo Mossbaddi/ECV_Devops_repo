@@ -7,5 +7,17 @@ pipeline {
                 sh 'npm ci'
             }
         }
+        // LANCEZ LES TESTS ET LE LINT
+        stage("Lint") {
+            steps {
+                sh "npm run lint"
+            }
+
+        }
+        stage("Tests") {
+            steps {
+                sh "npm run tests:coverage"
+            }
+        }
     }
 }

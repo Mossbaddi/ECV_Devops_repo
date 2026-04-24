@@ -27,7 +27,7 @@ pipeline {
         }
 
         // Faites un build docker de cette image en utilisant le container engine de l'hôte
-        stage {
+        stage("Build") {
             steps {
                 sh 'docker build -t api-app .'
             }

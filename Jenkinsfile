@@ -14,7 +14,7 @@ pipeline {
 
                 stage("Lint") {
                     steps {
-                        sh "npm run lint"
+                        sh "npm run lint "
                     }
 
                 }
@@ -25,5 +25,13 @@ pipeline {
                 }
             }
         }
-    }
+
+        // Faites un build docker de cette image en utilisant le container engine de l'hôte
+        stage {
+            steps {
+                sh 'docker build -t api-app .'
+            }
+        }
+    
+    }   
 }
